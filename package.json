@@ -1,0 +1,55 @@
+{
+  "name": "mongoose-strip-paths",
+  "version": "0.0.1",
+  "description": "A mongoose plugin that deletes provided paths on a document and its sub documents, if any.",
+  "main": "lib/mongoose-strip-paths.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "coverage": "URI='mongodb://mfe:mfe@localhost/mongoose-field-encryption-test' istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coverage-report": "URI='mongodb://mfe:mfe@localhost/mongoose-field-encryption-test' istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorparmar/mongoose-strip-paths"
+  },
+  "keywords": [
+    "mongoose",
+    "remove",
+    "field",
+    "cqrs",
+    "string",
+    "strip",
+    "security",
+    "hide",
+    "mongo",
+    "delete",
+    "document",
+    "subdocument"
+  ],
+  "author": {
+    "name": "Victor Parmar",
+    "email": "victorparmar@gmail.com",
+    "url": "https://smalldata.tech"
+  },
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorparmar/mongoose-strip-paths/issues"
+  },
+  "dependencies": {
+    "mongoose": "4.6.0",
+    "object-path": "0.11.2",
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "bluebird": "^3.4.6",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "mocha-lcov-reporter": "^1.2.0"
+  }
+}
