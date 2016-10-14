@@ -84,7 +84,7 @@ user.stripPaths();
 
 ### Required options
 
-- `path`: an array list of the required paths to remove (see `object-path` api for more path notations)
+- `path`: an array list of the required paths to remove. See [object-path](https://www.npmjs.com/package/object-path) api for more path notations.
 
 ## Requirements
 
