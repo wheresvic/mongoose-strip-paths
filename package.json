@@ -1,6 +1,6 @@
 {
   "name": "mongoose-strip-paths",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A mongoose plugin that deletes provided paths on a document and its sub documents, if any.",
   "main": "lib/mongoose-strip-paths.js",
   "files": [
