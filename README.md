@@ -8,7 +8,7 @@ A mongoose plugin that deletes provided paths on a document and its sub document
 
 When instantiated, this plugin adds a static method `stripPaths()` to your schema. Upon invoking this method, it loops over the provided paths in the `options.paths` variable and sets them to `undefined`. If there are any nested sub documents (via a single nested schema or embedded within an array), the `stripPaths()` method of all respective sub documents is also invoked. This works for nested subdocuments as well as documents added via a populate query.
 
-Note that there will be no validation done upon invoking the `stripPaths()` method, which means that the document could be in an invalid state. 
+Note that there will be no validation done upon invoking the `stripPaths()` method, which means that the document could be in an invalid state. As of version 0.0.2 `stripPaths()` also returns a reference to the document for easy chaining. 
 
 This functionality should ideally only be used to return the document for further processing.
 
@@ -80,6 +80,11 @@ user.stripPaths();
     }
   ]
 }
+
+// another example
+
+let userObj = user.stripPaths().toObject();
+
 ```
 
 ### Required options

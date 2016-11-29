@@ -18,7 +18,7 @@ let AddressSchema = new Schema({
   city: String
 });
 
-AddressSchema.plugin(mongooseStripPaths, { paths: ['street'] });
+AddressSchema.plugin(mongooseStripPaths, { paths: ['street', '_id', '__v'] });
 
 let PostSchema = new Schema({
   title: String,
@@ -112,13 +112,13 @@ describe('mongoose-strip-paths plugin', () => {
       });
 
       // when
-      user.stripPaths();
+      let strippedUser = user.stripPaths();
 
       // then
-      expect(user.createdAt).to.be.undefined;
-      expect(user.posts[0].fieldToStrip).to.be.undefined;
-      expect(user.posts[1].fieldToStrip).to.be.undefined;
-      expect(user.address.street).to.be.undefined;
+      expect(strippedUser.createdAt).to.be.undefined;
+      expect(strippedUser.posts[0].fieldToStrip).to.be.undefined;
+      expect(strippedUser.posts[1].fieldToStrip).to.be.undefined;
+      expect(strippedUser.address.street).to.be.undefined;
 
     });
   });
@@ -164,13 +164,15 @@ describe('mongoose-strip-paths plugin', () => {
         })
         .then(foundUserGroup => {
           // when
-          foundUserGroup.stripPaths();
+          let ret = foundUserGroup.stripPaths();
 
           // then
-          expect(foundUserGroup.users[0].createdAt).to.be.undefined;
-          expect(foundUserGroup.users[0].posts[0].fieldToStrip).to.be.undefined;
-          expect(foundUserGroup.users[0].posts[1].fieldToStrip).to.be.undefined;
-          expect(foundUserGroup.users[0].address.street).to.be.undefined;
+          expect(ret.users[0].createdAt).to.be.undefined;
+          expect(ret.users[0].posts[0].fieldToStrip).to.be.undefined;
+          expect(ret.users[0].posts[1].fieldToStrip).to.be.undefined;
+          expect(ret.users[0].address._id).to.be.undefined;
+          expect(ret.users[0].address.__v).to.be.undefined;
+          expect(ret.users[0].address.street).to.be.undefined;
         });
     });
   });
