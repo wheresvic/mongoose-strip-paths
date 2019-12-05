@@ -122,6 +122,10 @@ let userObj = user.stripPaths().toObject();
 
 ## Changelog
 
+### 1.0.1
+
+- Update development dependencies
+
 ### 1.0.0
 
 - Fix bug where the `_id` and `__v` properties could be stripped on the root object
