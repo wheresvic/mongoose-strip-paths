@@ -170,7 +170,7 @@ describe('mongoose-strip-paths plugin', () => {
           expect(ret.users[0].createdAt).to.be.undefined;
           expect(ret.users[0].posts[0].fieldToStrip).to.be.undefined;
           expect(ret.users[0].posts[1].fieldToStrip).to.be.undefined;
-          expect(ret.users[0].address._id).to.be.undefined;
+          expect(ret.users[0].address._id).to.not.be.undefined;
           expect(ret.users[0].address.__v).to.be.undefined;
           expect(ret.users[0].address.street).to.be.undefined;
         });

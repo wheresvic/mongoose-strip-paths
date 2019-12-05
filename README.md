@@ -1,6 +1,6 @@
 # mongoose-strip-paths
 
-[![Build Status](https://travis-ci.org/victorparmar/mongoose-strip-paths.svg?branch=master)](https://travis-ci.org/victorparmar/mongoose-strip-paths) [![Coverage Status](https://coveralls.io/repos/github/victorparmar/mongoose-strip-paths/badge.svg?branch=master)](https://coveralls.io/github/victorparmar/mongoose-strip-paths?branch=master)
+[![Build Status](https://travis-ci.org/wheresvic/mongoose-strip-paths.svg?branch=master)](https://travis-ci.org/wheresvic/mongoose-strip-paths) [![Coverage Status](https://coveralls.io/repos/github/wheresvic/mongoose-strip-paths/badge.svg?branch=master)](https://coveralls.io/github/wheresvic/mongoose-strip-paths?branch=master)
 
 A mongoose plugin that deletes provided paths on a document and its sub documents, if any.
 
@@ -107,6 +107,24 @@ let userObj = user.stripPaths().toObject();
 1. Start mongo with `mongod`.
 2. Run tests with `npm test`. Additionally you can pass your own mongodb uri as an environment variable if you would like to test against your own database, for e.g. `URI='mongodb://username:password@localhost/mongoose-strip-paths-test' npm test`
 
+## Publishing
+
+### release-it
+
+`release-it patch,minor,major`
+
+### Manual
+
+- `npm version patch,minor,major`
+- `npm publish`
+
+## Changelog
+
+### 1.0.0
+
+- Fix bug where the `_id` and `__v` properties could be stripped on the root object
+- Add mongoose >= 5.x support
+- Update development dependencies
 
 ## Misc
 

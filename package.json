@@ -31,7 +31,7 @@
   ],
   "author": {
     "name": "Victor Parmar",
-    "email": "victorparmar@gmail.com",
+    "email": "vic@smalldata.tech",
     "url": "https://smalldata.tech"
   },
   "contributors": [],
@@ -39,17 +39,39 @@
   "bugs": {
     "url": "https://github.com/victorparmar/mongoose-strip-paths/issues"
   },
+  "peerDependencies": {
+    "mongoose": ">=4.11.0"
+  },
   "dependencies": {
-    "mongoose": "4.6.0",
-    "object-path": "0.11.2",
+    "object-path": "0.11.4",
     "underscore": "1.8.3"
   },
   "devDependencies": {
-    "bluebird": "^3.4.6",
-    "chai": "^3.5.0",
-    "coveralls": "^2.11.14",
+    "bluebird": "3.7.2",
+    "chai": "4.2.0",
+    "coveralls": "3.0.9",
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.0",
-    "mocha-lcov-reporter": "^1.2.0"
+    "mocha": "6.2.2",
+    "mocha-lcov-reporter": "^1.2.0",
+    "mongoose": "5.7.13",
+    "release-it": "12.4.3"
+  },
+  "release-it": {
+    "hooks": {
+      "before:init": "npm run test:auth",
+      "before:bump": null,
+      "after:bump": null,
+      "before:release": null,
+      "after:release": "git describe --abbrev=0 --tags"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "gitlab": {
+      "release": false
+    }
   }
 }
