@@ -93,9 +93,9 @@ let userObj = user.stripPaths().toObject();
 
 ## Requirements
 
-- Node `>=4.4.7`
+- Node `>=6`
 - MongoDB `>=2.6.10`
-- Mongoose `>=4.0.0`
+- Mongoose `>=4.11.0`
 
 ## Installation
 
@@ -125,6 +125,7 @@ let userObj = user.stripPaths().toObject();
 - Fix bug where the `_id` and `__v` properties could be stripped on the root object
 - Add mongoose >= 5.x support
 - Update development dependencies
+- Drop Node.js 4.x support
 
 ## Misc
 
