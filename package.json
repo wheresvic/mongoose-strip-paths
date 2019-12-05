@@ -9,7 +9,8 @@
   "scripts": {
     "test": "mocha",
     "coverage": "URI='mongodb://mfe:mfe@localhost/mongoose-field-encryption-test' istanbul cover ./node_modules/mocha/bin/_mocha",
-    "coverage-report": "URI='mongodb://mfe:mfe@localhost/mongoose-field-encryption-test' istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coverage-report": "URI='mongodb://mfe:mfe@localhost/mongoose-field-encryption-test' istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "release-it": "release-it"
   },
   "repository": {
     "type": "git",
@@ -58,7 +59,7 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": "npm run test:auth",
+      "before:init": "npm run test",
       "before:bump": null,
       "after:bump": null,
       "before:release": null,
